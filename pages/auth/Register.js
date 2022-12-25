@@ -1,6 +1,6 @@
 
 import React,{useState} from "react"
-import { auth } from "../firebase";
+import { auth } from "../firebase.config";
 import { sendSignInLinkToEmail } from "firebase/auth";
 import { Formik, Form, Field } from "formik"
 import * as Yup from "yup"
@@ -19,7 +19,7 @@ const  Register =()=>{
       //
       e.preventDefault()
       const config ={
-         url: "http://localhost:3000/register/completeRegistration",
+         url: process.env.NEXT_PUBLIC_REGISTER_REDIRECT_URL,
          handleCodeInApp: true
       }
 
